@@ -1,59 +1,68 @@
 <html><head>
 <script type="text/javascript">
 function go(toon) {
-   document.write('<div id='+toon+'>Name </div>');
+   document.write('<td id='+toon+'></td>');
    var s = document.createElement('script');
-   // s.src = "http://us.battle.net/api/wow/character/winterhoof/Eilee?fields=achievements&jsonp=bnetreturn";
-   s.src = "http://eu.battle.net/api/wow/character/ghostlands/"+toon+"?fields=feed&jsonp=bnetreturn";
+   s.src = "http://eu.battle.net/api/wow/character/ghostlands/"+toon+"?fields=titles&jsonp=bnetreturn";
    s.type = "text/javascript";
    document.getElementsByTagName("head")[0].appendChild(s);
 }
 function bnetreturn(o) {
    var toon=o.name;
    document.getElementById(toon).innerHTML += '<img src=http://eu.battle.net/static-render/eu/'+o.thumbnail+' alt=img>';
-   document.getElementById(toon).innerHTML += JSON.stringify(o);
-}
-
-var my_JSON_object = {};
-
-function gettoon(toon){
-   var url = "http://eu.battle.net/api/wow/character/ghostlands/"+toon+"?fields=items";
-   document.write(url);
-   var http_request = new XMLHttpRequest();
-   http_request.open("GET", url, true);
-
-   http_request.onreadystatechange = function () {
-    var done = 4, ok = 200;
-    if (http_request.readyState == done && http_request.status == ok) {
-        my_JSON_object = JSON.parse(http_request.responseText);
-       document.write(my_JSON_object.thumbnail);
-    // document.write(JSON.stringify(my_JSON_object));
-    }else{
-
-       document.write("else");
-    }
-};
-http_request.send(null);
-
-
-
-}
-
-function dumpline(o){
-
-   document.write("Hej");
-   document.write(o);
-
-
-
+   //document.getElementById(toon).innerHTML += JSON.stringify(o);
+   //document.getElementById(toon).innerHTML += JSON.stringify(o.titles);
+   var s=toon;
+   for(i=0;i<o.titles.length;i++){
+      if(o.titles[i].selected){
+          s= o.titles[i].name;
+          s.replace(/Astr/,""+toon);
+      }
+   }
+   document.getElementById(toon).innerHTML += s;
 }
 </script>
 </head><body>
-   <div id=result>data</div>
-
-   <script>dumpline("sdsds");</script>
+     <table border=3>
+  <tr><td>
    <script>go("Manxan");</script>
-   <script>go("Spats");</script>
+  </tr>
+  <tr><td>
+   <script>go("Templaar");</script>
+  </tr>
+  <tr><td>
+   <script>go("Drizztdourde");</script>
+  </tr>
+  <tr><td>
+   <script>go("Fourtoes");</script>
+  </tr>
+  <tr><td>
+   <script>go("Teckila");</script>
+  </tr>
+  <tr><td>
+   <script>go("Swegurra");</script>
+  </tr>
+  <tr><td>
+   <script>go("Oria");</script>
+  </tr>
+  <tr><td>
+   <script>go("Filonia");</script>
+  </tr>
+  <tr><td>
+   <script>go("Spirtmoon");</script>
+  </tr>
+  <tr><td>
+   <script>go("Máxxpain");</script>
+  </tr>
+  <tr><td>
+   <script>go("Kermitzz");</script>
+  </tr>
+  <tr><td>
+   <script>go("Bodiless");</script>
+  </tr>
 
+
+
+</table>
 
 </body></html>
