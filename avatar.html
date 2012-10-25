@@ -1,35 +1,29 @@
 <html><head>
 <script type="text/javascript">
-{
-   var s = document.createElement('script');
-   s.src = "sprintf.js";
-   s.type = "text/javascript";
-   document.getElementsByTagName("head")[0].appendChild(s);
-}
-function go(toon) {
-   document.write('<td id='+toon+'></td>');
+function go() {
+   var toon=document.forms["tooninfo"]["xyz"].value;
    var s = document.createElement('script');
    s.src = "http://eu.battle.net/api/wow/character/ghostlands/"+toon+"?fields=titles&jsonp=bnetreturn";
    s.type = "text/javascript";
    document.getElementsByTagName("head")[0].appendChild(s);
 }
+function validateform(){
+   go();
+   return(false);
+}
 function bnetreturn(o) {
    var toon=o.name;
-   //document.getElementById(toon).innerHTML += JSON.stringify(o);
-   //document.getElementById(toon).innerHTML += JSON.stringify(o.titles);
-   var s=toon;
-   for(i=0;i<o.titles.length;i++){
-      if(o.titles[i].selected){
-          s=sprintf( o.titles[i].name,toon);
-      }
-   }
-   document.getElementById(toon).innerHTML += s;
-   document.getElementById(toon).innerHTML += '<br><a href=http://www.wow-heroes.com/character/eu/Ghostlands/'+toon+'/><img src=http://eu.battle.net/static-render/eu/'+o.thumbnail+' alt=img></a>';
-   document.getElementById(toon).innerHTML += '<br><a href=http://www.wow-heroes.com/character/eu/Ghostlands/'+toon+'/>wow heroes</a>';
-   document.getElementById(toon).innerHTML += ' <a href=http://www.askmrrobot.com/wow/gear/eu/ghostlands/'+toon+'>askmr robot</a>';
+   document.getElementById("data").innerHTML += '<img src=http://eu.battle.net/static-render/eu/'+o.thumbnail+' alt=img><br>';
+   document.getElementById("data").innerHTML += '<input size=80 value='+ 'http://eu.battle.net/static-render/eu/'+o.thumbnail+' ><br>';
 }
 </script>
 </head><body>
+<div id=data></div>
+<form action=false name="tooninfo" onSubmit="return validateform();">
+<input name=xyz type=text value=manxan ">
+<input type="button"  onclick="go();" value="Find Picture">
+</form>
+
 
 
 
