@@ -7,7 +7,7 @@
    document.getElementsByTagName("head")[0].appendChild(s);
 }
 function go(toon) {
-   document.write('<div id='+toon+'></div>');
+   document.write('<div id='+toon+'><h2>'+toon+'</h2>Loading</div>');
    var s = document.createElement('script');
    s.src = "http://eu.battle.net/api/wow/character/ghostlands/"+toon+"?fields=titles&jsonp=bnetreturn";
    s.type = "text/javascript";
@@ -15,15 +15,13 @@ function go(toon) {
 }
 function bnetreturn(o) {
    var toon=o.name;
-   //document.getElementById(toon).innerHTML += JSON.stringify(o);
-   //document.getElementById(toon).innerHTML += JSON.stringify(o.titles);
    var s=toon;
    for(i=0;i<o.titles.length;i++){
       if(o.titles[i].selected){
           s=sprintf( o.titles[i].name,toon);
       }
    }
-   document.getElementById(toon).innerHTML += "<h2>"+s+"</h2>"
+   document.getElementById(toon).innerHTML = "<h2>"+s+"</h2>"
    document.getElementById(toon).innerHTML += '<a href=http://www.wow-heroes.com/character/eu/Ghostlands/'+toon+'/><img src=http://eu.battle.net/static-render/eu/'+o.thumbnail+' alt=img></a>';
    document.getElementById(toon).innerHTML += '<br><a href=http://www.wow-heroes.com/character/eu/Ghostlands/'+toon+'/>wow heroes</a>';
    document.getElementById(toon).innerHTML += ' <a href=http://www.askmrrobot.com/wow/gear/eu/ghostlands/'+toon+'>askmr robot</a>';
@@ -31,45 +29,45 @@ function bnetreturn(o) {
 </script>
 </head><body>
 <div>
-   <script>go("Manxan");</script><td>Healer (dps)
+   <script>go("Manxan");</script>Healer (dps)
 </div>
 <div>
-   <script>go("Templaar");</script><td>Tank
+   <script>go("Filonia");</script>Healer(dps)
 </div>
 <div>
-   <script>go("Drizztdourde");</script><td>Meele DPS
+   <script>go("Spirtmoon");</script>Healer
 </div>
 <div>
-   <script>go("Fourtoes");</script><td>Tank
+   <script>go("Templaar");</script>Tank
 </div>
 <div>
-   <script>go("Outkaste");</script><td>Dps
+   <script>go("Fourtoes");</script>Tank
 </div>
 <div>
-   <script>go("Swegurra");</script><td>Dps
+   <script>go("Drizztdourde");</script>Meele Dps
 </div>
 <div>
-   <script>go("Oria");</script><td>Dps
+   <script>go("Outkaste");</script>Dps
 </div>
 <div>
-   <script>go("Filonia");</script><td>Healer(dps)
+   <script>go("Swegurra");</script>Dps
 </div>
 <div>
-   <script>go("Spirtmoon");</script><td>Dps
+   <script>go("Oria");</script>Dps
 </div>
 <div>
-   <script>go("Shootudead");</script><td>Dps
+   <script>go("Shootudead");</script>Dps
 </div>
 <div>
-   <script>go("Trialpexan");</script><td>Dps
+   <script>go("Trialpexan");</script>Dps
 </div>
 <div>
-   <script>go("Imbacow");</script><td>
+   <script>go("Imbacow");</script>
 </div>
 <div>
-   <script>go("Kermitzz");</script><td>Dps
+   <script>go("Kermitzz");</script>Dps but cannot be online most of the nights
 </div>
 <div>
-   <script>go("Bodiless");</script><td>Healer
+   <script>go("Bodiless");</script>Healer
 </div>
 </body></html>
