@@ -7,7 +7,7 @@
    document.getElementsByTagName("head")[0].appendChild(s);
 }
 function go(toon) {
-   document.write('<td id='+toon+'></td>');
+   document.write('<div id='+toon+'></div>');
    var s = document.createElement('script');
    s.src = "http://eu.battle.net/api/wow/character/ghostlands/"+toon+"?fields=titles&jsonp=bnetreturn";
    s.type = "text/javascript";
@@ -23,59 +23,53 @@ function bnetreturn(o) {
           s=sprintf( o.titles[i].name,toon);
       }
    }
-   document.getElementById(toon).innerHTML += s;
-   document.getElementById(toon).innerHTML += '<br><a href=http://www.wow-heroes.com/character/eu/Ghostlands/'+toon+'/><img src=http://eu.battle.net/static-render/eu/'+o.thumbnail+' alt=img></a>';
+   document.getElementById(toon).innerHTML += "<h2>"+s+"</h2>"
+   document.getElementById(toon).innerHTML += '<a href=http://www.wow-heroes.com/character/eu/Ghostlands/'+toon+'/><img src=http://eu.battle.net/static-render/eu/'+o.thumbnail+' alt=img></a>';
    document.getElementById(toon).innerHTML += '<br><a href=http://www.wow-heroes.com/character/eu/Ghostlands/'+toon+'/>wow heroes</a>';
    document.getElementById(toon).innerHTML += ' <a href=http://www.askmrrobot.com/wow/gear/eu/ghostlands/'+toon+'>askmr robot</a>';
 }
 </script>
 </head><body>
-     <table border=0>
-  <tr><td>
+<div>
    <script>go("Manxan");</script><td>Healer (dps)
-  </tr>
-  <tr><td>
+</div>
+<div>
    <script>go("Templaar");</script><td>Tank
-  </tr>
-  <tr><td>
+</div>
+<div>
    <script>go("Drizztdourde");</script><td>Meele DPS
-  </tr>
-  <tr><td>
+</div>
+<div>
    <script>go("Fourtoes");</script><td>Tank
-  </tr>
-  <tr><td>
+</div>
+<div>
    <script>go("Outkaste");</script><td>Dps
-  </tr>
-  <tr><td>
+</div>
+<div>
    <script>go("Swegurra");</script><td>Dps
-  </tr>
-  <tr><td>
+</div>
+<div>
    <script>go("Oria");</script><td>Dps
-  </tr>
-  <tr><td>
+</div>
+<div>
    <script>go("Filonia");</script><td>Healer(dps)
-  </tr>
-  <tr><td>
+</div>
+<div>
    <script>go("Spirtmoon");</script><td>Dps
-  </tr>
-  <tr><td>
+</div>
+<div>
    <script>go("Shootudead");</script><td>Dps
-  </tr>
-  <tr><td>
+</div>
+<div>
    <script>go("Trialpexan");</script><td>Dps
-  </tr>
-  <tr><td>
+</div>
+<div>
    <script>go("Imbacow");</script><td>
-  </tr>
-  <tr><td>
+</div>
+<div>
    <script>go("Kermitzz");</script><td>Dps
-  </tr>
-  <tr><td>
+</div>
+<div>
    <script>go("Bodiless");</script><td>Healer
-  </tr>
-
-
-
-</table>
-
+</div>
 </body></html>
