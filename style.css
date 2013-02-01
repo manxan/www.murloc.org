@@ -57,10 +57,12 @@ a:hover {
 #header-wrapper {
 }
 
-#header {
+#header {        
 	clear: both;
 	width: 100%;
 	margin: 0px auto;
+        text-align: center;
+        display: block;
 }
 
 /* Logo */
@@ -218,11 +220,13 @@ a:hover {
     width: 90%;
 }
 
-.post {
-	margin-bottom: 15px;
-	border-bottom: 1px dashed #D8D8D8;
-        float: right;
+.post {        
+        width: 200px;
+        height: 190px;
+	margin: 15px;	
+        float: left;
 }
+
 
 .post-bgtop {
 }
@@ -231,6 +235,7 @@ a:hover {
 }
 
 .post .title {
+        font-family: 'Arial';
 	height: 16px;
 	margin-bottom: 10px;
 	padding: 12px 0 0 0px;
@@ -365,12 +370,15 @@ a:hover {
 /* Footer */
 
 #footer {
+        position: absolute;
+        bottom: 10px;
 	height: 50px;
+        width: 100%;
 	margin: 0 auto;
 	padding: 0px 0 15px 0;
 	background: #E9E9E9;
 	border-top: 5px solid #D8D8D8;
-	font-family: 'Arvo', serif;
+	font-family: 'Arvo', serif;         
 }
 
 #footer p {

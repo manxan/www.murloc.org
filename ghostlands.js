@@ -1,12 +1,55 @@
 {
+    var murlocs = { "roster" : [ 
+        { "member":  "Manxan", "note":"Raid Leader" },
+        { "member":  "Yokhanan", "note":"Raid Leader Assistant-Officer" }, 
+        { "member":  "Filonia", "note": "Raid Leader Assistant"}, 
+        { "member":  "Oria", "note":"Officer" }, 
+        { "member":  "Máxxpain" },  
+        { "member": "Dazwarr" }, 
+        { "member": "Drizztdourde" }, 
+        { "member": "Shootudead" }, 
+        { "member": "Trialpexan" }, 
+        { "member": "Kermitzz" }, 
+        { "member": "Madjai" }  ,  
+        { "member": "Hemoglobine" }, 
+        { "member": "Clímax" }    
+    ]
+    };
+    
+    var ratty = { "roster" : [ 
+        { "member":  "Ratburger", "note":"Raid Leader-Officer" },
+        { "member":  "Goldiie", "note":"Raid Leader Assistant-Officer" }, 
+        { "member":  "Mikomir", "note": "Raid Leader Assistant-Officer"}, 
+        { "member":  "Iks", "note":"Officer" }, 
+        { "member":  "Allybêatêr" },  
+        { "member": "Scelerat", "note":"Officer" }, 
+        { "member": "Snarky", "note":"Officer" }, 
+        { "member": "Swegurra" }, 
+        { "member": "Craine" }, 
+        { "member": "Biggred" }, 
+        { "member": "Mysere" }  ,  
+        { "member": "Spriztdourde", "note":"Officer" }, 
+        { "member": "Émíly" }    
+    ]
+    };
+    
+   
     var ssp = document.createElement('script');
     ssp.src = "sprintf.js";
     ssp.type = "text/javascript";
     document.getElementsByTagName("head")[0].appendChild( ssp);
 };
 
+
+var goall=function(rosterdata) {
+    for (i = 0;i < rosterdata.roster.length;i++) {        
+        go(rosterdata.roster[i].member);        
+    }
+}
+
+
 var go=function(toon) {
-    document.write('<div id='+toon+'><h2>'+toon+'</h2>Loading</div>');
+    document.write('<div id='+toon+' class="post"><h2>'+toon+'</h2>Loading</div>');
     var s = document.createElement('script');
     s.src = "http://eu.battle.net/api/wow/character/ghostlands/"+toon+"?fields=titles,talents&jsonp=bnetreturn";
     s.type = "text/javascript";
@@ -38,16 +81,4 @@ var bnetreturn=function(o) {
     document.getElementById(toon).innerHTML += ' <a href=http://www.askmrrobot.com/wow/gear/eu/ghostlands/'+toon+'>AskMr. Robot</a>';
 };
 
-/*
-var realmstatus=function() {
-    document.write('<div id="header">Loading realm status</div>');
-    var s = document.createElement('script');
-    s.src = "http://eu.battle.net//api/wow/realm/status&realms=Ghostlands&jsonp=bnetreturn2";
-    s.type = "text/javascript";
-    document.getElementsByTagName("head")[0].appendChild(s);
-};
-var bnetreturn2=function(o) {        
-    for(i=0;i<o.realms.length;i++){        
-        document.getElementById('header').innerHTML = "<h2>"+(o.realms[i].status?"Ghostlands is up":"Ghostlands is down")+"</h2>";
-    }
-};*/
+
