@@ -5,10 +5,9 @@
     document.getElementsByTagName("head")[0].appendChild( ssp);
 };
 
-
 var goall=function(rosterdata) {
     for (i = 0;i < rosterdata.roster.length;i++) {        
-        go(rosterdata.roster[i].member);        
+        go(rosterdata.roster[i].member);
     }
 }
 
@@ -16,7 +15,7 @@ var goall=function(rosterdata) {
 var go=function(toon) {
     document.write('<div id='+toon+' class="post"><h2>'+toon+'</h2>Loading</div>');
     var s = document.createElement('script');
-    s.src = "http://eu.battle.net/api/wow/character/ghostlands/"+toon+"?fields=titles,talents&jsonp=bnetreturn";
+    s.src = "http://eu.battle.net/api/wow/character/ghostlands/"+toon+"?fields=titles&jsonp=bnetreturn";
     s.type = "text/javascript";
     document.getElementsByTagName("head")[0].appendChild(s);
 };
@@ -29,16 +28,7 @@ var bnetreturn=function(o) {
             s=sprintf( o.titles[i].name,toon);
         }      
     }
-    var specs="";
-    if (o.talents.length == 2 && o.talents[0].spec.role != o.talents[1].spec.role)      {
-        specs = o.talents[0].spec.role +  "/" + o.talents[1].spec.role;
-    }
-    else  {
-        specs = o.talents[0].spec.role;
-    }
-    
-    
-    
+    var specs; 
     document.getElementById(toon).innerHTML = "<h2>"+s+"</h2>"
     document.getElementById(toon).innerHTML += '<a href=http://www.wow-heroes.com/character/eu/Ghostlands/'+toon+'/><img src=http://eu.battle.net/static-render/eu/'+o.thumbnail+' alt=img></a>';
     document.getElementById(toon).innerHTML += ' <br/>'+ specs +'<br/>';
