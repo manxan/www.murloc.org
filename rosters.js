@@ -29,7 +29,9 @@
         { "member": "Biggred" }, 
         { "member": "Mysere" }  ,  
         { "member": "Spriztdourde", "note":"Officer" }, 
-        { "member": "Émíly" }    
+        { "member": "Émíly" },    
+        { "member": "Krylarin" },    
+        { "member": "Braindeadio" }    
     ]
     };
 };
