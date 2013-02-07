@@ -221,10 +221,14 @@ a:hover {
 }
 
 .post {        
-        width: 200px;
-        height: 190px;
+        font-family: 'Arial', serif;
+        width: 250px;
+        height: 180px;
 	margin: 15px;	
         float: left;
+        text-align: center;
+        border: beige;
+        border-style: dotted;
 }
 
 
@@ -371,14 +375,15 @@ a:hover {
 
 #footer {
         position: absolute;
-        bottom: 10px;
-	height: 50px;
+        bottom: 0px;
+	height: 20px;
         width: 100%;
 	margin: 0 auto;
 	padding: 0px 0 15px 0;
 	background: #E9E9E9;
 	border-top: 5px solid #D8D8D8;
-	font-family: 'Arvo', serif;         
+	font-family: 'Arvo', serif;       
+        text-align: center;
 }
 
 #footer p {
