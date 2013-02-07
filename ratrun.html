@@ -2,19 +2,40 @@
     <head>
         <title>The Ratrun raid team</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />        
-        <script type="text/javascript" src="sprintf.js"></script>
-        <script type="text/javascript"  src="rosters.js"></script>
-        <script type="text/javascript" src="ghostlands.js"></script>
+        <script src="ghostlands.js"></script>                         
         <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
         <div id ="header-wrapper">
             <div id="header">
-                <a href="http://theratrun.proboards.com"><img src="header.jpg" alt="Visit the forum" title="Forum" /></a>
+                <a href="http://theratrun.proboards.com"><img src="header.jpg" alt="Logo" /></a>
             </div>
         </div>        
         <div id="content">     
-            <script>goall(ratty);</script>
+            <script>{
+
+             var rats = { "roster" : [ 
+                 { "member":  "Ratburger","spec":"Tank","note":"Raid Leader-Officer" },
+                 { "member":  "Goldiie","spec":"Tank","note":"Raid Leader Assistant-Officer" }, 
+                 { "member":  "Mikomir", "spec":"healer","note": "Raid Leader Assistant-Officer"}, 
+                 { "member":  "Iks","spec":"healer", "note":"Officer" }, 
+                 { "member":  "Allybêatêr","spec":"healer", },  
+                 { "member": "Scelerat","os":"healer", "note":"Officer" }, 
+                 { "member": "Snarky", "note":"Officer" }, 
+                 { "member": "Swegurra" }, 
+                 { "member": "Craine" }, 
+                 { "member": "Biggred" }, 
+                 { "member": "Mysere","spec":"Mdps","os":"Tank" }  ,  
+                 { "member": "Spriztdourde", "note":"Officer" }, 
+                 { "member": "Émíly" }    
+             ]
+             };
+         goall(rats);}
+        </script>
+        </div>        
+        <div id="footer">
+            <a href="./index.html">Murlocs</a>
         </div>        
     </body>
 </html>
+    
