@@ -25,8 +25,8 @@ var go=function(obj) {
         +'</div>'
         +s    
         +'<br/><a href="http://eu.battle.net/wow/en/character/Ghostlands/'+toon+'/advanced/">'
-        +'<img src="wowheroes.png" alt="WoW-Heroes" title="WoW-Heroes" width="32px" height="32px"/></a>&nbsp;'
-        +'<a href=http://www.askmrrobot.com/wow/gear/eu/ghostlands/'+toon+'><img src="teamrobot.png" alt="Ask Mr. Robot" title="Ask Mr. Robot" width="32px" height="32px"/></a>' 
+        +'<img src="wowheroes.png" alt="WoW-Heroes" title="WoW-Heroes" width="48px" height="26px"/></a>&nbsp;'
+        +'<a href=http://www.askmrrobot.com/wow/gear/eu/ghostlands/'+toon+'><img src="teamrobot.png" alt="Ask Mr. Robot" title="Ask Mr. Robot" width="32px" height="26px"/></a>' 
         +(note!=''?'<br/>'+note:'')
         +'</div>'
     );
