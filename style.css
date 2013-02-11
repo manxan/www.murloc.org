@@ -216,9 +216,12 @@ a:hover {
 /* Content */
 
 #content {	
-    margin-left: 10%;
-    width: 90%;
+    margin-left: 5%;
+    margin-right: 25%;
+    width: 70%;
+    float: left;
 }
+
 
 .post {        
         font-family: 'Arial', serif;
@@ -349,6 +352,18 @@ a:hover {
 #sidebar a:hover {
 	text-decoration: underline;
 }
+
+/* Widget */
+
+#widget {       
+    width: 25%;
+}
+
+.twitter-timeline {
+    position: absolute;
+    right: 10px;
+}
+
 
 /* Calendar */
 
