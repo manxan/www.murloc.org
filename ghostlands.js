@@ -24,9 +24,11 @@ var go=function(obj) {
         +'<img src="placeholder.png" alt=img>'
         +'</div>'
         +s    
-        +'<br/><a href="http://eu.battle.net/wow/en/character/Ghostlands/'+toon+'/advanced/">'
-        +'<img src="wowheroes.png" alt="WoW-Heroes" title="WoW-Heroes" width="32px" height="32px"/></a>&nbsp;'
-        +'<a href=http://www.askmrrobot.com/wow/gear/eu/ghostlands/'+toon+'><img src="teamrobot.png" alt="Ask Mr. Robot" title="Ask Mr. Robot" width="32px" height="32px"/></a>' 
+        +'<br/><a href="http://eu.battle.net/wow/en/character/Ghostlands/'+toon+'/advanced">'
+        +'<img src="blizz.png" alt="battle.net" title="Battle.net" width="57px" height="26px"/></a>&nbsp;'
+        +'<a href=http://www.wow-heroes.com/character/eu/Ghostlands/'+toon+'/>'
+        +'<img src="wowheroes.png" alt="WoW-Heroes" title="WoW-Heroes" width="48px" height="26px"/></a>&nbsp;'
+        +'<a href=http://www.askmrrobot.com/wow/gear/eu/ghostlands/'+toon+'><img src="teamrobot.png" alt="Ask Mr. Robot" title="Ask Mr. Robot" width="32px" height="26px"/></a>' 
         +(note!=''?'<br/>'+note:'')
         +'</div>'
     );
@@ -44,8 +46,8 @@ var bnetreturn=function(o) {
         if(o.titles[i].selected){
             s=sprintf( o.titles[i].name,toon);
         }      
-    }    
-    document.getElementById('Loading'+toon).innerHTML = '<h2>'+s+'</h2><a href="http://eu.battle.net/wow/en/character/Ghostlands/'+toon+'/advanced/"><img src="http://eu.battle.net/static-render/eu/'+o.thumbnail+'" alt=img></a>';
+    } 
+    document.getElementById('Loading'+toon).innerHTML = '<h2>'+s+'</h2><a href="http://eu.battle.net/wow/en/character/Ghostlands/'+toon+'/advanced"><img src="http://eu.battle.net/static-render/eu/'+o.thumbnail+'" alt=img></a>';
         
     
 };
