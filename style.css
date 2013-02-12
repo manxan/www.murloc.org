@@ -213,18 +213,37 @@ a:hover {
     margin-right: 3%;
 }
 
+
+/* Widget */
+/* NEW: Goes before content */
+
+#widget {       
+    width: 25%;
+}
+
+.twitter-timeline {
+    position: absolute;
+    right: 10px;
+}
+
 /* Content */
+/* Widget modifications: Changed margin left to 5% and added margin right (25%) 
+ * Have content float left (of widget). Perhaps need a more oblivious way to do this
+ */
 
 #content {	
-    margin-left: 10%;
-    width: 90%;
+    margin-left: 5%;
+    margin-right: 25%;
+    width: 70%;
+    float: left;
 }
+
 
 .post {        
         font-family: 'Arial', serif;
-        width: 250px;
-        height: 180px;
-	margin: 15px;	
+        width: 230px;
+        height: 200px;
+	margin: 5px;	
         float: left;
         text-align: center;
         border: beige;
@@ -238,6 +257,10 @@ a:hover {
 .post-bgbtm {
 }
 
+.post-role {
+    font-family: sans-serif;
+    font-weight: bold;    
+}
 .post .title {
         font-family: 'Arial';
 	height: 16px;
@@ -349,6 +372,8 @@ a:hover {
 #sidebar a:hover {
 	text-decoration: underline;
 }
+
+
 
 /* Calendar */
 
