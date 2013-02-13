@@ -16,11 +16,11 @@ var go=function(obj) {
     }
     if(obj.os){
       s=s+'/'+obj.os;
-    }   
+    }              
     document.write(
-          '<div id='+toon+' class="post">'
+          '<div id='+toon+' class="post">'        
         + '<div id="Loading'+toon+'">'
-        +'<h2>'+toon+'<h2>'
+        +'<h2>'+toon+'<h2>'      
         +'<img src="placeholder.png" alt=img>'
         +'</div>'
         +'<div class="post-role">'+s+'</div>'    
@@ -28,10 +28,17 @@ var go=function(obj) {
         +'<img src="blizz.png" alt="battle.net" title="Official profile of '+toon+' in the wow armory at Battle.net" width="28px" height="13px"/></a>&nbsp;'
         +'<a href=http://www.wow-heroes.com/character/eu/Ghostlands/'+toon+'/>'
         +'<img src="wowheroes.png" alt="WoW-Heroes" title="Profile of '+toon+' at WoW-Heroes" width="24px" height="13px"/></a>&nbsp;'        
-        +'<a href=http://www.askmrrobot.com/wow/gear/eu/ghostlands/'+toon+'><img src="teamrobot.png" alt="Ask Mr. Robot" title="Ask Mr. Robot about '+toon+'" width="16px" height="13px"/></a>' 
+        +'<a href=http://www.askmrrobot.com/wow/gear/eu/ghostlands/'+toon+'><img src="teamrobot.png" alt="Ask Mr. Robot" title="Ask Mr. Robot about '+toon+'" width="16px" height="13px"/></a>'         
+        +'<div id="'+toon+'-stars" class="starimage">&nbsp;</div>'
         +(note!=''?'<div class="post-role"><br/>'+note+'</div>':'')
         +'</div>'
-    );
+    );              
+    var el = document.getElementById(toon+'-stars');    
+    if (obj.stars) {    
+        el.style.width = (obj.stars*16)+'px';
+    } else {
+        el.style.width = '0px';
+    }
     var scr = document.createElement('script');
     scr.src = "http://eu.battle.net/api/wow/character/ghostlands/"+toon+"?fields=titles&jsonp=bnetreturn";
     scr.type = "text/javascript";
@@ -46,10 +53,11 @@ var bnetreturn=function(o) {
         if(o.titles[i].selected){
             s=sprintf( o.titles[i].name,toon);
         }      
-    } 
-    document.getElementById('Loading'+toon).innerHTML = '<h2>'+s+'</h2><a href="http://eu.battle.net/wow/en/character/Ghostlands/'+toon+'/advanced"><img src="http://eu.battle.net/static-render/eu/'+o.thumbnail+'" alt=img></a>';
-        
-    
+    }        
+    document.getElementById('Loading'+toon).innerHTML = 
+        '<h2>'+s+'</h2>'                                                                //Toon Name        
+        +'<a href="http://eu.battle.net/wow/en/character/Ghostlands/'+toon+'/advanced">'//Armory Link
+        +'<img src="http://eu.battle.net/static-render/eu/'+o.thumbnail+'" alt=img></a>';//Avatar    
 };
 
 

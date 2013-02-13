@@ -250,6 +250,12 @@ a:hover {
         border-style: dotted;
 }
 
+.starimage {
+    background-repeat: repeat-x;
+    background-image: url("./star.png");
+    width:16px;                
+    display: inline-block;
+}
 
 .post-bgtop {
 }
@@ -295,7 +301,9 @@ a:hover {
 .post .entry {
 	padding: 0px 0px 20px 0px;
 	padding-bottom: 20px;
-	text-align: justify;
+	text-align: center;
+        font-family: 'Arial', serif;
+        font-size: 12px;       
 }
 
 .links {
