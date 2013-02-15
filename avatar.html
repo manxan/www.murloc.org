@@ -1,31 +1,32 @@
-<html><head>
-<script type="text/javascript">
-function go() {
-   var toon=document.forms["tooninfo"]["xyz"].value;
-   var s = document.createElement('script');
-   s.src = "http://eu.battle.net/api/wow/character/ghostlands/"+toon+"?fields=titles&jsonp=bnetreturn";
-   s.type = "text/javascript";
-   document.getElementsByTagName("head")[0].appendChild(s);
-}
-function validateform(){
-   go();
-   return(false);
-}
-function bnetreturn(o) {
-   var toon=o.name;
-   document.getElementById("data").innerHTML += '<img src=http://eu.battle.net/static-render/eu/'+o.thumbnail+' alt=img><br>';
-   document.getElementById("data").innerHTML += '<input size=80 value='+ 'http://eu.battle.net/static-render/eu/'+o.thumbnail+' ><br>';
-}
-</script>
-</head><body>
-<div id=data></div>
-<form action=false name="tooninfo" onSubmit="return validateform();">
-<input name=xyz type=text value=manxan ">
-<input type="button"  onclick="go();" value="Find Picture">
-</form>
-
-
-
-
-
-</body></html>
+<html>
+    <head>
+        <title>Avatar Creator</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />        
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script type="text/javascript">
+            function go() {                
+               var toon=document.forms["tooninfo"]["xyz"].value;               
+               var s = document.createElement('script');
+               s.src = "http://eu.battle.net/api/wow/character/ghostlands/"+toon+"?fields=titles&jsonp=bnetreturn";
+               s.type = "text/javascript";
+               document.getElementsByTagName("head")[0].appendChild(s);
+            }
+            function validateform(){
+               go();
+               return(false);
+            }
+            function bnetreturn(o) {               
+               document.getElementById("data").innerHTML += '<img src=http://eu.battle.net/static-render/eu/'+o.thumbnail+' alt=img><br>';
+               document.getElementById("data").innerHTML += '<input size=80 value='+ 'http://eu.battle.net/static-render/eu/'+o.thumbnail+' ><br>';
+            }
+        </script>
+    </head>
+    <body> 
+        <div id="data"></div>
+        <form action=false name="tooninfo" onSubmit="return validateform();">
+            <input name="xyz" type="text" value="manxan"/> 
+            <input type="button"  onclick="go();" value="Find Picture"/>
+        </form>
+        
+    </body>
+</html>
