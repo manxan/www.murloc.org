@@ -10,7 +10,7 @@ var go=function(obj) {
     var note = '';
     if (obj.note)
         note = obj.note;        
-    var s="RDPS";
+    var s="DPS";
     if(obj.spec){
       s=obj.spec;
     }
