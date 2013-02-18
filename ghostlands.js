@@ -24,12 +24,12 @@ var go=function(obj) {
         +'<img src="placeholder.png" alt=img>'
         +'</div>'
         +'<div class="post-role">'+s+'</div>'    
+        +(note!=''?'<div class="post-role">'+note+'</div>':'')
         +'<br/><a href="http://eu.battle.net/wow/en/character/Ghostlands/'+toon+'/advanced">'
         +'<img src="blizz.png" alt="battle.net" title="Official profile of '+toon+' in the wow armory at Battle.net" width="28px" height="13px"/></a>&nbsp;'
         +'<a href=http://www.wow-heroes.com/character/eu/Ghostlands/'+toon+'/>'
         +'<img src="wowheroes.png" alt="WoW-Heroes" title="Profile of '+toon+' at WoW-Heroes" width="24px" height="13px"/></a>&nbsp;'        
         +'<a href=http://www.askmrrobot.com/wow/gear/eu/ghostlands/'+toon+'><img src="teamrobot.png" alt="Ask Mr. Robot" title="Ask Mr. Robot about '+toon+'" width="16px" height="13px"/></a>' 
-        +(note!=''?'<div class="post-role">'+note+'</div>':'')
         +'</div>'
     );
     var scr = document.createElement('script');
@@ -53,7 +53,7 @@ var bnetreturn=function(o) {
         +'<img src="http://eu.battle.net/static-render/eu/'+o.thumbnail+'" alt=img></a>'//Avatar  
         +'<p class="post-role">iLvl: '                                         //Average Equipped Item Level
         +(o.items.averageItemLevelEquipped?o.items.averageItemLevelEquipped:'?')//Equipped    
-        +"/"+(o.items.averageItemLevel?o.items.averageItemLevel:'?')+'</p>';//Equipped    
+        +"/"+(o.items.averageItemLevel?o.items.averageItemLevel:'?')+'';//Equipped    
 };
 
 
