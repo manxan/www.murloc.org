@@ -51,8 +51,9 @@ var bnetreturn=function(o) {
         '<h2>'+s+'</h2>'                                                                //Toon Name        
         +'<a href="http://eu.battle.net/wow/en/character/Ghostlands/'+toon+'/advanced">'//Armory Link
         +'<img src="http://eu.battle.net/static-render/eu/'+o.thumbnail+'" alt=img></a>'//Avatar  
-        +'<p class="post-role">Equipped iLvl: '                                         //Average Equipped Item Level
-        +(o.items.averageItemLevelEquipped?o.items.averageItemLevelEquipped:'?')+'</p>';//Equipped    
+        +'<p class="post-role">iLvl: '                                         //Average Equipped Item Level
+        +(o.items.averageItemLevelEquipped?o.items.averageItemLevelEquipped:'?')//Equipped    
+        +"/"+(o.items.averageItemLevel?o.items.averageItemLevel:'?')+'</p>';//Equipped    
 };
 
 
