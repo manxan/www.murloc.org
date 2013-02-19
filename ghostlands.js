@@ -28,7 +28,7 @@ var go=function(obj) {
          +'<p id="'+toon+'-ilvl" class="post-role">iLvl: '                              //Average Equipped Item Level placeholder
         +'?/?'
         +'</p>' 
-        +'<br/><a href="http://eu.battle.net/wow/en/character/Ghostlands/'+toon+'/advanced">'
+        +'<a href="http://eu.battle.net/wow/en/character/Ghostlands/'+toon+'/advanced">'
         +'<img src="blizz.png" alt="battle.net" title="Official profile of '+toon+' in the wow armory at Battle.net" width="28px" height="13px"/></a>&nbsp;'
         +'<a href=http://www.wow-heroes.com/character/eu/Ghostlands/'+toon+'/>'
         +'<img src="wowheroes.png" alt="WoW-Heroes" title="Profile of '+toon+' at WoW-Heroes" width="24px" height="13px"/></a>&nbsp;'        
